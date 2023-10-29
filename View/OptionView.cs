@@ -26,7 +26,7 @@ namespace Quizyy.View
 			}
 			Console.Write(r_corner);
 
-			/// 2 linijka
+			
 			Console.SetCursorPosition(position1, position2 + 1);
 			Console.Write(wall);
 			foreach (var c in option)
@@ -35,7 +35,7 @@ namespace Quizyy.View
 			}
 			Console.Write(wall);
 
-			/// 3 linijka
+			
 			Console.SetCursorPosition(position1, position2 + 2);
 			Console.Write(dl_corner);
 			foreach (var c in option)

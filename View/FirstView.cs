@@ -18,16 +18,12 @@ namespace Quizyy.View
 			Console.SetCursorPosition(49, 11);
 			Console.Write("Wybierz tryb gry z którym chciałbyś się zmierzyć");
 
-			
-			OptionView.NewOption("Fiszki",20,15);
-
-			OptionView.NewOption("Dopasowanie pojęć", 42, 15);
-
-			OptionView.NewOption("Wpisanie odpowiedzi", 75, 15);
-
-			OptionView.NewOption("Wybór odpowiedzi", 115, 15);
-
-
+			Console.SetCursorPosition(64, 25);
+			Console.Write("Szybkie wprowadzenie:");
+			Console.SetCursorPosition(40, 26);
+			Console.Write("Quizyy to prosta gra edukacyjna w której zmierzysz się z quizami w różnej formie");
+			Console.SetCursorPosition(30, 27);
+			Console.Write("Aby wybrać tryb gry naprowadź kursor strzałkami na ramkę z wybranym trybem gry i kliknij Enter");
 
 		}
 
