@@ -52,22 +52,25 @@ namespace Quizyy.Controller
 						if (y < Console.WindowHeight - 1)
 							y++;
 						break;
-					case ConsoleKey.Enter:
-						Console.WriteLine(x +" "+ y);
+					case ConsoleKey.Enter:					
 						if (x >= 20 && x <= (21+option1.Length) && y>=15 && y <= 17)
 						{
-							
+							LogoView.LogoViewSet();
+
 						}
 						else if(x >= 42 && x <= (43 + option2.Length) && y >= 15 && y <= 17)
 						{
+							LogoView.LogoViewSet();
 
 						}
 						else if (x >= 75 && x <= (76 + option3.Length) && y >= 15 && y <= 17)
 						{
+							LogoView.LogoViewSet();
 
 						}
 						else if (x >= 115 && x <= (116 + option4.Length) && y >= 15 && y <= 17)
 						{
+							LogoView.LogoViewSet();
 
 						}
 						break; 
