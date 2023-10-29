@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Quizyy.View
 {
-	public class LogoView
+	public static class LogoView
 	{
-		public LogoView() {
+		public static void LogoViewSet() {
 			Console.BackgroundColor = ConsoleColor.DarkBlue;
 			Console.ForegroundColor = ConsoleColor.White;
 			Console.Clear();
@@ -28,7 +28,7 @@ namespace Quizyy.View
 			Console.Write("  #####    #####    ####    #######   ####     ####   \r\n");
 			Console.SetCursorPosition(47, 8);
 			Console.Write("     ###                                              \r\n");			
-			Console.SetCursorPosition(0, 9);
+			
 		}
 	}
 }

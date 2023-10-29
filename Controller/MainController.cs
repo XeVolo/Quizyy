@@ -12,8 +12,10 @@ namespace Quizyy.Controller
 	{
 		public MainController() {
 
-			FirstView firstView = new FirstView();
-		
+			FirstView.FirstViewSet();
+			
+			
+			Console.ReadKey();
 		}
 	}
 }
