@@ -54,9 +54,21 @@ namespace Quizyy.Controller
 						break;
 					case ConsoleKey.Enter:
 						Console.WriteLine(x +" "+ y);
-						if (x >= 20 && x <= (20+option1.Length) && y>=15 && y <= 17)
+						if (x >= 20 && x <= (21+option1.Length) && y>=15 && y <= 17)
 						{
-							Console.Write("EOOO");
+							
+						}
+						else if(x >= 42 && x <= (43 + option2.Length) && y >= 15 && y <= 17)
+						{
+
+						}
+						else if (x >= 75 && x <= (76 + option3.Length) && y >= 15 && y <= 17)
+						{
+
+						}
+						else if (x >= 115 && x <= (116 + option4.Length) && y >= 15 && y <= 17)
+						{
+
 						}
 						break; 
 				}
