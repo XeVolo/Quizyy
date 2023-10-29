@@ -22,8 +22,16 @@ namespace Quizyy.View
 			Console.Write("Szybkie wprowadzenie:");
 			Console.SetCursorPosition(40, 26);
 			Console.Write("Quizyy to prosta gra edukacyjna w której zmierzysz się z quizami w różnej formie");
-			Console.SetCursorPosition(30, 27);
-			Console.Write("Aby wybrać tryb gry naprowadź kursor strzałkami na ramkę z wybranym trybem gry i kliknij Enter");
+			Console.SetCursorPosition(30, 28);
+			Console.Write("Fiszki to wyświetlane pojęcie i ukryta definicja");
+			Console.SetCursorPosition(30, 29);
+			Console.Write("Dopasowanie pojęć polega na połączeniu w pary pasujących do siebie opcji");
+			Console.SetCursorPosition(30, 30);
+			Console.Write("Wpisanie odpowiedzi polega na ręcznym wpisaniu odpowiedzi do zadanego pytania");
+			Console.SetCursorPosition(30, 31);
+			Console.Write("Wybór odpowiedzi polega na wybraniu jednej poprawnej odpowiedzi spośród podanych");
+			Console.SetCursorPosition(30, 40);
+			Console.Write("Aby wybrać tryb gry naprowadź kursor strzałkami na ramkę z wybranym trybem gry i kliknij Enter...");
 
 		}
 
