@@ -9,6 +9,9 @@ namespace Quizyy.View
 	public class LogoView
 	{
 		public LogoView() {
+			Console.BackgroundColor = ConsoleColor.DarkBlue;
+			Console.ForegroundColor = ConsoleColor.White;
+			Console.Clear();
 			Console.SetCursorPosition(47, 1);
 			Console.Write("  #####   ##   ##   ####    #######  ##  ##   ##  ##  \r\n");
 			Console.SetCursorPosition(47, 2);
@@ -24,7 +27,7 @@ namespace Quizyy.View
 			Console.SetCursorPosition(47, 7);
 			Console.Write("  #####    #####    ####    #######   ####     ####   \r\n");
 			Console.SetCursorPosition(47, 8);
-			Console.Write("     ###                                              \r\n");
+			Console.Write("     ###                                              \r\n");			
 			Console.SetCursorPosition(0, 9);
 		}
 	}

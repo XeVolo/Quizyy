@@ -12,14 +12,8 @@ namespace Quizyy.View
 		public FirstView() {
 			Console.SetBufferSize(150, 45);
 			Console.SetWindowSize(150, 45);
-			Console.SetCursorPosition(25, 0);
-			Console.Write("  #####   ##   ##   ####    #######  ##  ##   ##  ##  \r\n ##   ##  ##   ##    ##     #   ##   ##  ##   ##  ##  \r\n ##   ##  ##   ##    ##        ##    ##  ##   ##  ##  \r\n ##   ##  ##   ##    ##       ##      ####     ####   \r\n ##   ##  ##   ##    ##      ##        ##       ##    \r\n ##  ###  ##   ##    ##     ##    #    ##       ##    \r\n  #####    #####    ####    #######   ####     ####   \r\n     ###                                              \r\n");
+			LogoView logo=new LogoView();
 
-
-			Console.WriteLine("The current buffer height is {0} rows.",
-				  Console.BufferHeight);
-			Console.WriteLine("The current buffer width is {0} columns.",
-							  Console.BufferWidth);
 		}
 
 	}
