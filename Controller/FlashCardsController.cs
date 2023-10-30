@@ -11,7 +11,40 @@ namespace Quizyy.Controller
 	{
 		public FlashCardsController()
 		{
+		}
+		public void CreateFlashCardsController()
+		{
+			LogoView.LogoViewSet();
 			FlashCardsView.FlashCardsViewSet();
+
+
+
+			FlashCardsControllerService();
+		}
+		private void FlashCardsControllerService()
+		{
+			while (true)
+			{
+				ConsoleKeyInfo keyInfo = Console.ReadKey();
+				switch (keyInfo.Key)
+				{
+					case ConsoleKey.LeftArrow:
+
+
+						break;
+					case ConsoleKey.RightArrow:
+
+
+						break;
+					case ConsoleKey.Enter:
+
+
+						break;
+					case ConsoleKey.Escape:
+
+						return;						
+				}
+			}
 		}
 	}
 }

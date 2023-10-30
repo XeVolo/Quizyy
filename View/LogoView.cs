@@ -11,7 +11,7 @@ namespace Quizyy.View
 		public static void LogoViewSet() {
 			Console.BackgroundColor = ConsoleColor.DarkBlue;
 			Console.ForegroundColor = ConsoleColor.White;
-			Console.Clear();
+			Console.Clear();		
 			Console.SetCursorPosition(47, 1);
 			Console.Write("  #####   ##   ##   ####    #######  ##  ##   ##  ##  \r\n");
 			Console.SetCursorPosition(47, 2);

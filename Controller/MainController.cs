@@ -11,7 +11,11 @@ namespace Quizyy.Controller
 	public class MainController
 	{
 		public MainController() {
-
+			CreateMainController();
+			Control();
+		}
+		public void CreateMainController()
+		{
 			String option1 = "Fiszki";
 			String option2 = "Dopasowanie pojęć";
 			String option3 = "Wpisanie odpowiedzi";
@@ -27,6 +31,15 @@ namespace Quizyy.Controller
 			OptionView.NewOption(option3, 75, 15);
 
 			OptionView.NewOption(option4, 115, 15);
+		}
+		private void Control()
+		{
+			String option1 = "Fiszki";
+			String option2 = "Dopasowanie pojęć";
+			String option3 = "Wpisanie odpowiedzi";
+			String option4 = "Wybór odpowiedzi";
+
+			FlashCardsController newobject1 = new FlashCardsController();
 			int x = 20, y = 15;
 			while (true)
 			{
@@ -52,14 +65,16 @@ namespace Quizyy.Controller
 						if (y < Console.WindowHeight - 1)
 							y++;
 						break;
-					case ConsoleKey.Enter:					
-						if (x >= 20 && x <= (21+option1.Length) && y>=15 && y <= 17)
+					case ConsoleKey.Enter:
+						if (x >= 20 && x <= (21 + option1.Length) && y >= 15 && y <= 17)
 						{
-							LogoView.LogoViewSet();
-							new FlashCardsController();
+
+							newobject1.CreateFlashCardsController();
+							Console.Write("?");
+							CreateMainController();
 
 						}
-						else if(x >= 42 && x <= (43 + option2.Length) && y >= 15 && y <= 17)
+						else if (x >= 42 && x <= (43 + option2.Length) && y >= 15 && y <= 17)
 						{
 							LogoView.LogoViewSet();
 
@@ -74,12 +89,9 @@ namespace Quizyy.Controller
 							LogoView.LogoViewSet();
 
 						}
-						break; 
+						break;
 				}
 			}
-
-
-			//Console.ReadKey();
 		}
 	}
 }
