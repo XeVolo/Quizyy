@@ -19,9 +19,7 @@ namespace Quizyy.Controller
 			FlashCardsView.FlashCardsViewSet();
 
 
-			FlashCardsModel.CreateFlashCardsModel();
 
-			
 
 
 
@@ -29,21 +27,34 @@ namespace Quizyy.Controller
 		}
 		private void FlashCardsControllerService()
 		{
+			List<FlashCardsModel> lista = FlashCardsModel.CreateFlashCardsModel();
+			int d = 1;
+			int id = 0;
+			OptionView.NewOption(lista[id].concept, 70, 26);
 			while (true)
 			{
 				ConsoleKeyInfo keyInfo = Console.ReadKey();
 				switch (keyInfo.Key)
 				{
 					case ConsoleKey.LeftArrow:
-
-
+						--id;
+						OptionView.NewOption(lista[id].concept, 70, 26);
 						break;
 					case ConsoleKey.RightArrow:
-
-
+						++id;
+						OptionView.NewOption(lista[id].concept, 70, 26);
 						break;
 					case ConsoleKey.Enter:
-
+						if (d == 1)
+						{
+							//funkcja czyszczenia tej linijki
+							OptionView.NewOption(lista[id].definition, 70, 26);
+							d = 2;
+						}else
+						{
+							OptionView.NewOption(lista[id].concept, 70, 26);
+							d = 1;
+						}
 
 						break;
 					case ConsoleKey.Escape:

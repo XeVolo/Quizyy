@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,21 +13,27 @@ namespace Quizyy.Model
 		public string concept { get; set; }
 		public string definition { get; set; }
 
-		public static void CreateFlashCardsModel()
+		public static List<FlashCardsModel> CreateFlashCardsModel()
 		{
-			new FlashCardsModel()
+			List<FlashCardsModel> lista = new List<FlashCardsModel>
 			{
-				id = 0,
-				concept = "pensja",
-				definition = "a salary"
+				new FlashCardsModel()
+				{
+					id = 0,
+					concept = "pensja",
+					definition = "a salary"
+				},
+			
+				new FlashCardsModel()
+				{
+					id = 1,
+					concept = "kwalifikacje",
+					definition = "qualifications"
+				}
 			};
-			new FlashCardsModel()
-			{
-				id = 1,
-				concept = "kwalifikacje",
-				definition = "qualifications"
-			};
+			return lista;
 		}
+
 
 	}
 	
