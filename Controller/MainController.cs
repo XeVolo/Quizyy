@@ -56,6 +56,7 @@ namespace Quizyy.Controller
 						if (x >= 20 && x <= (21+option1.Length) && y>=15 && y <= 17)
 						{
 							LogoView.LogoViewSet();
+							new FlashCardsController();
 
 						}
 						else if(x >= 42 && x <= (43 + option2.Length) && y >= 15 && y <= 17)
