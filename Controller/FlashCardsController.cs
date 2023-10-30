@@ -1,4 +1,5 @@
-﻿using Quizyy.View;
+﻿using Quizyy.Model;
+using Quizyy.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,11 @@ namespace Quizyy.Controller
 		{
 			LogoView.LogoViewSet();
 			FlashCardsView.FlashCardsViewSet();
+
+
+			FlashCardsModel.CreateFlashCardsModel();
+
+			
 
 
 
