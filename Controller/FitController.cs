@@ -24,6 +24,8 @@ namespace Quizyy.Controller
 		{
 			List<FlashCardsModel> lista = FlashCardsModel.CreateFlashCardsModel();
 			int x = 20, y = 15;
+			FitOptionModel ?flashcard1 =null;
+			FitOptionModel ?flashcard2 = null;
 			List<FitOptionModel> optionlist = NewSet();
 			while (true)
 			{
@@ -49,9 +51,44 @@ namespace Quizyy.Controller
 						break;
 					case ConsoleKey.Enter:
 						foreach(var f in optionlist) {
-							if (x >= f.positionx && x <= (f.positionx + f.option.concept.Length) && y >= 15 && y <= 17)
+							if (x >= f.positionx && x <= (f.positionx + f.option.concept.Length) && y >= f.positiony && y <= f.positiony+2)
 							{
+								if (flashcard1 == null)
+								{
+									flashcard1 = f;
+									Console.SetCursorPosition(40, 40);
+									Console.Write("                             ");
+									Console.SetCursorPosition(95, 40);
+									Console.Write("                              ");
+									Console.SetCursorPosition(70, 42);
+									Console.Write("                          ");
+									Console.SetCursorPosition(40, 40);
+									Console.Write("Wybrano: " + flashcard1.option.concept);
+								}
+								else
+								{
+									flashcard2 = f;
+									Console.SetCursorPosition(95, 40);
+									Console.Write("Wybrano: " + flashcard2.option.definition);
+									if (flashcard1.option.id == flashcard2.option.id)
+									{
+										Console.SetCursorPosition(70, 42);
+										Console.Write("Połącznie poprawne");
+										ClearFieldView.ClearField(flashcard1.positionx, flashcard1.positiony);
+										ClearFieldView.ClearField(flashcard2.positionx, flashcard2.positiony);
 
+										flashcard1 = null;
+										flashcard2 = null;
+									}
+									else
+									{
+										Console.SetCursorPosition(70, 42);
+										Console.Write("Połącznie błędne");
+										flashcard1 = null;
+										flashcard2 = null;
+									}
+
+								}
 							}
 						}
 

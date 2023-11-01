@@ -8,14 +8,14 @@ namespace Quizyy.View
 {
 	public static class ClearFieldView
 	{
-		public static void ClearField()
+		public static void ClearField(int x,int y)
 		{
-			Console.SetCursorPosition(4,24);
+			Console.SetCursorPosition(x,y);
 
-			for(int i = 24; i <= 28; i++)
+			for(int i = y; i <= y+2; i++)
 			{
-				Console.SetCursorPosition(60,i);
-				Console.Write("                                                                   ");
+				Console.SetCursorPosition(x,i);
+				Console.Write("                                           ");
 				
 			}
 		}
