@@ -29,7 +29,38 @@ namespace Quizyy.Model
 					id = 1,
 					concept = "kwalifikacje",
 					definition = "qualifications"
-				}
+				},
+				new FlashCardsModel()
+				{
+					id = 2,
+					concept = "uczciwość",
+					definition = "integrity"
+				},
+				new FlashCardsModel()
+				{
+					id = 3,
+					concept = "metka",
+					definition = "label"
+				},
+				new FlashCardsModel()
+				{
+					id = 4,
+					concept = "struktura",
+					definition = "framework"
+				},
+				new FlashCardsModel()
+				{
+					id = 5,
+					concept = "równość",
+					definition = "equality"
+				},
+				new FlashCardsModel()
+				{
+					id = 6,
+					concept = "surowce",
+					definition = "raw materials"
+				},
+
 			};
 			return lista;
 		}

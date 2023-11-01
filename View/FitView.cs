@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Quizyy.View
 {
-	public static class FlashCardsView
+	public static class FitView
 	{
-		public static void FlashCardsViewSet()
+		public static void FitViewSet()
 		{
 			ArrowsView.ArrowsSet();
 

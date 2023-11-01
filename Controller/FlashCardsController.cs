@@ -38,20 +38,23 @@ namespace Quizyy.Controller
 				{
 					case ConsoleKey.LeftArrow:
 						--id;
+						ClearFieldView.ClearField();
 						OptionView.NewOption(lista[id].concept, 70, 26);
 						break;
 					case ConsoleKey.RightArrow:
 						++id;
+						ClearFieldView.ClearField();
 						OptionView.NewOption(lista[id].concept, 70, 26);
 						break;
 					case ConsoleKey.Enter:
 						if (d == 1)
 						{
-							//funkcja czyszczenia tej linijki
+							ClearFieldView.ClearField();
 							OptionView.NewOption(lista[id].definition, 70, 26);
 							d = 2;
 						}else
 						{
+							ClearFieldView.ClearField();
 							OptionView.NewOption(lista[id].concept, 70, 26);
 							d = 1;
 						}

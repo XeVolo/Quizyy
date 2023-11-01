@@ -18,7 +18,7 @@ namespace Quizyy.Controller
 		{
 			String option1 = "Fiszki";
 			String option2 = "Dopasowanie pojęć";
-			String option3 = "Wpisanie odpowiedzi";
+			String option3 = "Podanie odpowiedzi";
 			String option4 = "Wybór odpowiedzi";
 
 
@@ -36,7 +36,7 @@ namespace Quizyy.Controller
 		{
 			String option1 = "Fiszki";
 			String option2 = "Dopasowanie pojęć";
-			String option3 = "Wpisanie odpowiedzi";
+			String option3 = "Podanie odpowiedzi";
 			String option4 = "Wybór odpowiedzi";
 
 			FlashCardsController newobject1 = new FlashCardsController();
