@@ -13,53 +13,23 @@ namespace Quizyy.Model
 		public string concept { get; set; }
 		public string definition { get; set; }
 
+		public FlashCardsModel(int id,string concept,string definition) {
+			this.id = id;
+			this.concept = concept;
+			this.definition = definition;
+		}
+
 		public static List<FlashCardsModel> CreateFlashCardsModel()
 		{
 			List<FlashCardsModel> lista = new List<FlashCardsModel>
 			{
-				new FlashCardsModel()
-				{
-					id = 0,
-					concept = "pensja",
-					definition = "a salary"
-				},
-			
-				new FlashCardsModel()
-				{
-					id = 1,
-					concept = "kwalifikacje",
-					definition = "qualifications"
-				},
-				new FlashCardsModel()
-				{
-					id = 2,
-					concept = "uczciwość",
-					definition = "integrity"
-				},
-				new FlashCardsModel()
-				{
-					id = 3,
-					concept = "metka",
-					definition = "label"
-				},
-				new FlashCardsModel()
-				{
-					id = 4,
-					concept = "struktura",
-					definition = "framework"
-				},
-				new FlashCardsModel()
-				{
-					id = 5,
-					concept = "równość",
-					definition = "equality"
-				},
-				new FlashCardsModel()
-				{
-					id = 6,
-					concept = "surowce",
-					definition = "raw materials"
-				},
+				new FlashCardsModel(0,"pensja","a salary"),
+				new FlashCardsModel(1,"kwalifikacje","qualifications"),
+				new FlashCardsModel(2, "uczciwość", "integrity"),
+				new FlashCardsModel(3, "metka", "label"),
+				new FlashCardsModel(4, "struktura", "framework"),
+				new FlashCardsModel(5, "równość", "equality"),
+				new FlashCardsModel(6, "surowce", "raw materials"),
 
 			};
 			return lista;

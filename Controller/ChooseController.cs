@@ -24,8 +24,7 @@ namespace Quizyy.Controller
 		{
 			List<WriteModel> list = WriteModel.CreateWriteModel();
 			int x = 20, y = 15;
-
-			List<FitOptionModel> optionlist = NewSet();
+			FitOptionModel ansplace= NewSet();			
 			while (true)
 			{
 				Console.SetCursorPosition(x, y);
@@ -49,7 +48,16 @@ namespace Quizyy.Controller
 							y++;
 						break;
 					case ConsoleKey.Enter:
-						
+						if (x >= ansplace.positionx && x <= (ansplace.positionx + ansplace.option.concept.Length) && y >= ansplace.positiony && y <= ansplace.positiony + 2)
+						{
+							Console.SetCursorPosition(70, 36);
+							Console.Write("Odpowiedź poprawna");
+						}
+						else
+						{
+							Console.SetCursorPosition(70, 36);
+							Console.Write("Odpowiedź błędna");
+						}
 
 						break;
 					case ConsoleKey.Escape:
@@ -85,39 +93,39 @@ namespace Quizyy.Controller
 			int result = rnd.Next(size);
 			return result;
 		}
-		private List<FitOptionModel> NewSet()
+		private FitOptionModel NewSet()
 		{
 			List<WriteModel> list = WriteModel.CreateWriteModel();
-			List<FitOptionModel> optionlist = new List<FitOptionModel>();
+			List<string> anslist = new List<string>();
 			int questionid = GetRandom();
+			anslist.Add(list[questionid].answer);
+			anslist.Add(list[questionid].incorrectans1);
+			anslist.Add(list[questionid].incorrectans2);
+			anslist.Add(list[questionid].incorrectans3);
 			ChooseView.ChooseOption(list[questionid].question);
 			List<int> drawn = GetNumbers();
-			foreach (int i in drawn)
-			{
-				if (i == 0)
-				{
-					OptionView.NewOption(list[questionid].answer, 40, 26);
-					//optionlist.Add(new FitOptionModel(5, lista[drawn[5]], 40, 26));
-				}
-				else if (i == 1)
-				{
-					OptionView.NewOption(list[questionid].incorrectans1, 40, 29);
-					//optionlist.Add(new FitOptionModel(6, lista[drawn[6]], 40, 29));
-				}
-				else if (i == 2)
-				{
-					OptionView.NewOption(list[questionid].incorrectans2, 95, 26);
-					//optionlist.Add(new FitOptionModel(7, lista[drawn[0]], 95, 26));
+			
+				OptionView.NewOption(anslist[drawn[0]], 40, 26);
+				OptionView.NewOption(anslist[drawn[1]], 40, 29);
+				OptionView.NewOption(anslist[drawn[2]], 95, 26);
+				OptionView.NewOption(anslist[drawn[3]], 95, 29);
 
-				}
-				else
-				{
-					OptionView.NewOption(list[questionid].incorrectans3, 95, 29);
-					//optionlist.Add(new FitOptionModel(8, lista[drawn[1]], 95, 29));
-				}
+			if (drawn[0] == 0)
+			{
+				return new FitOptionModel(0, new FlashCardsModel(0, list[questionid].answer, ""), 40, 26);
+			}else if (drawn[1] == 0)
+			{
+				return new FitOptionModel(0, new FlashCardsModel(0, list[questionid].answer, ""), 40, 29);
+			}else if (drawn[2] == 0)
+			{
+				return new FitOptionModel(0, new FlashCardsModel(0, list[questionid].answer, ""), 95, 26);
 			}
-			drawn.Clear();
-			return optionlist;
+			else
+			{
+				return new FitOptionModel(0, new FlashCardsModel(0, list[questionid].answer, ""), 95, 29);
+			}
+
+
 		}
 	}
 }

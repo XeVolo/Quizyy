@@ -10,7 +10,7 @@ namespace Quizyy.View
 	{
 		public static void ChooseViewSet()
 		{
-			ArrowsView.ArrowsSet();
+			//ArrowsView.ArrowsSet();
 
 
 		}
