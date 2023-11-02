@@ -27,7 +27,7 @@ namespace Quizyy.View
 			Console.SetCursorPosition(30, 29);
 			Console.Write("Dopasowanie pojęć polega na połączeniu w pary pasujących do siebie opcji");
 			Console.SetCursorPosition(30, 30);
-			Console.Write("Wpisanie odpowiedzi polega na ręcznym wpisaniu odpowiedzi do zadanego pytania");
+			Console.Write("Podanie odpowiedzi polega na ręcznym wpisaniu odpowiedzi do zadanego pytania");
 			Console.SetCursorPosition(30, 31);
 			Console.Write("Wybór odpowiedzi polega na wybraniu jednej poprawnej odpowiedzi spośród podanych");
 			Console.SetCursorPosition(30, 40);

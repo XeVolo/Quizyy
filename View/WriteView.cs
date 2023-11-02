@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Quizyy.View
 {
-	public static class FitView
+	public static class WriteView
 	{
-		public static void FitViewSet()
+		public static void WriteViewSet()
 		{
-			//ArrowsView.ArrowsSet();
+			ArrowsView.ArrowsSet();
 
 
 		}

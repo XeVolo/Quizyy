@@ -41,6 +41,7 @@ namespace Quizyy.Controller
 
 			FlashCardsController newobject1 = new FlashCardsController();
 			FitController newobject2 = new FitController();
+			WriteController newobject3= new WriteController();
 			int x = 20, y = 15;
 			while (true)
 			{
@@ -84,7 +85,9 @@ namespace Quizyy.Controller
 						}
 						else if (x >= 75 && x <= (76 + option3.Length) && y >= 15 && y <= 17)
 						{
-							LogoView.LogoViewSet();
+							newobject3.CreateWriteController();
+							Console.Write("?");
+							CreateMainController();
 
 						}
 						else if (x >= 115 && x <= (116 + option4.Length) && y >= 15 && y <= 17)
