@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Quizyy.View
 {
-	public static class WriteView
+	public static class ChooseView
 	{
-		public static void WriteViewSet()
+		public static void ChooseViewSet()
 		{
 			ArrowsView.ArrowsSet();
 
 
 		}
-		public static void WriteOption(string question)
+		public static void ChooseOption(string question)
 		{
-			Console.SetCursorPosition(50,26);
+			Console.SetCursorPosition(50, 20);
 			Console.WriteLine(question);
 
 		}
