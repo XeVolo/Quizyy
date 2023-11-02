@@ -52,6 +52,7 @@ namespace Quizyy.Controller
 						{
 							Console.SetCursorPosition(70, 36);
 							Console.Write("Odpowiedź poprawna");
+							ansplace = NewSet();
 						}
 						else
 						{
