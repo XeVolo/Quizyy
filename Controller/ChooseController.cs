@@ -58,6 +58,7 @@ namespace Quizyy.Controller
 						{
 							Console.SetCursorPosition(70, 36);
 							Console.Write("Odpowiedź błędna");
+
 						}
 
 						break;
