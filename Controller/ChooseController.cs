@@ -22,7 +22,7 @@ namespace Quizyy.Controller
 		}
 		private void ChooseControllerService()
 		{
-			List<WriteModel> list = WriteModel.CreateWriteModel();
+			List<WriteModel> list = BaseController.GetWriteList();
 			int x = 20, y = 15;
 			FitOptionModel ansplace= NewSet();			
 			while (true)
@@ -89,7 +89,7 @@ namespace Quizyy.Controller
 		}
 		private int GetRandom()
 		{
-			List<WriteModel> list = WriteModel.CreateWriteModel();
+			List<WriteModel> list = BaseController.GetWriteList();
 			int size = list.Count;
 			Random rnd = new Random();
 			int result = rnd.Next(size);
@@ -97,7 +97,7 @@ namespace Quizyy.Controller
 		}
 		private FitOptionModel NewSet()
 		{
-			List<WriteModel> list = WriteModel.CreateWriteModel();
+			List<WriteModel> list = BaseController.GetWriteList();
 			List<string> anslist = new List<string>();
 			int questionid = GetRandom();
 			anslist.Add(list[questionid].answer);
@@ -114,17 +114,17 @@ namespace Quizyy.Controller
 
 			if (drawn[0] == 0)
 			{
-				return new FitOptionModel(0, new FlashCardsModel(0, list[questionid].answer, ""), 40, 26);
+				return new FitOptionModel(0, new FlashCardsModel { id = 0, concept=list[questionid].answer, definition="" }, 40, 26);
 			}else if (drawn[1] == 0)
 			{
-				return new FitOptionModel(0, new FlashCardsModel(0, list[questionid].answer, ""), 40, 29);
+				return new FitOptionModel(0, new FlashCardsModel { id = 0, concept = list[questionid].answer, definition = "" }, 40, 29);
 			}else if (drawn[2] == 0)
 			{
-				return new FitOptionModel(0, new FlashCardsModel(0, list[questionid].answer, ""), 95, 26);
+				return new FitOptionModel(0, new FlashCardsModel { id = 0, concept = list[questionid].answer, definition = "" }, 95, 26);
 			}
 			else
 			{
-				return new FitOptionModel(0, new FlashCardsModel(0, list[questionid].answer, ""), 95, 29);
+				return new FitOptionModel(0, new FlashCardsModel { id = 0, concept = list[questionid].answer, definition = "" }, 95, 29);
 			}
 
 

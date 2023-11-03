@@ -13,6 +13,7 @@ namespace Quizyy.Model
 		public string concept { get; set; }
 		public string definition { get; set; }
 
+		/*
 		public FlashCardsModel(int id,string concept,string definition) {
 			this.id = id;
 			this.concept = concept;
@@ -34,7 +35,7 @@ namespace Quizyy.Model
 			};
 			return lista;
 		}
-
+		*/
 
 	}
 	

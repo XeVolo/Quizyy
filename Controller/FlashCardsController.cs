@@ -27,7 +27,7 @@ namespace Quizyy.Controller
 		}
 		private void FlashCardsControllerService()
 		{
-			List<FlashCardsModel> lista = FlashCardsModel.CreateFlashCardsModel();
+			List<FlashCardsModel> lista = BaseController.GetFlashCardsList();
 			int d = 1;
 			int id = 0;
 			OptionView.NewOption(lista[id].concept, 70, 26);

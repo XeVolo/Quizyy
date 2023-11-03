@@ -15,7 +15,7 @@ namespace Quizyy.Model
 		public string incorrectans2 { get; set; }
 		public string incorrectans3 { get; set; }
 
-
+		/*
 		public static List<WriteModel> CreateWriteModel()
 		{
 			List<WriteModel> lista = new List<WriteModel>
@@ -53,5 +53,6 @@ namespace Quizyy.Model
 			};
 			return lista;
 		}
+		*/
 	}
 }

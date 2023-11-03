@@ -26,7 +26,7 @@ namespace Quizyy.Controller
 		}
 		private void WriteControllerService()
 		{
-			List<WriteModel> list = WriteModel.CreateWriteModel();
+			List<WriteModel> list = BaseController.GetWriteList();
 			int id = 0;
 			WriteView.WriteOption(list[id].question);
 			while (true)

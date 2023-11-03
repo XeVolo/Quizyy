@@ -22,7 +22,7 @@ namespace Quizyy.Controller
 		}
 		private void FitControllerService()
 		{
-			List<FlashCardsModel> lista = FlashCardsModel.CreateFlashCardsModel();
+			List<FlashCardsModel> lista = BaseController.GetFlashCardsList();
 			int x = 20, y = 15;
 			FitOptionModel ?flashcard1 =null;
 			FitOptionModel ?flashcard2 = null;
@@ -101,7 +101,7 @@ namespace Quizyy.Controller
 		}
 		private int GetRandom()
 		{
-			List<FlashCardsModel> lista = FlashCardsModel.CreateFlashCardsModel();
+			List<FlashCardsModel> lista = BaseController.GetFlashCardsList();
 			int size=lista.Count;
 			Random rnd=new Random();
 			int result=rnd.Next(size);
@@ -126,7 +126,7 @@ namespace Quizyy.Controller
 		}
 		private List<FitOptionModel> NewSet()
 		{
-			List<FlashCardsModel> lista = FlashCardsModel.CreateFlashCardsModel();
+			List<FlashCardsModel> lista = BaseController.GetFlashCardsList();
 			List<FitOptionModel> optionlist=new List<FitOptionModel>();
 			Range xy = new Range(0, 6);
 
@@ -165,4 +165,5 @@ namespace Quizyy.Controller
 			return optionlist;
 		}
 	}
+
 }
