@@ -10,8 +10,8 @@ using Quizyy.Model;
 namespace Quizyy.Migrations
 {
     [DbContext(typeof(MyBaseContext))]
-    [Migration("20231103202519_test2")]
-    partial class test2
+    [Migration("20231103212400_test3")]
+    partial class test3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,10 +27,12 @@ namespace Quizyy.Migrations
 
                     b.Property<string>("concept")
                         .IsRequired()
+                        .HasMaxLength(40)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("definition")
                         .IsRequired()
+                        .HasMaxLength(40)
                         .HasColumnType("TEXT");
 
                     b.HasKey("id");
@@ -46,22 +48,27 @@ namespace Quizyy.Migrations
 
                     b.Property<string>("answer")
                         .IsRequired()
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("incorrectans1")
                         .IsRequired()
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("incorrectans2")
                         .IsRequired()
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("incorrectans3")
                         .IsRequired()
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("question")
                         .IsRequired()
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
                     b.HasKey("id");

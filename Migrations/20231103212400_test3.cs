@@ -5,7 +5,7 @@
 namespace Quizyy.Migrations
 {
     /// <inheritdoc />
-    public partial class test2 : Migration
+    public partial class test3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,8 +16,8 @@ namespace Quizyy.Migrations
                 {
                     id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    concept = table.Column<string>(type: "TEXT", nullable: false),
-                    definition = table.Column<string>(type: "TEXT", nullable: false)
+                    concept = table.Column<string>(type: "TEXT", maxLength: 40, nullable: false),
+                    definition = table.Column<string>(type: "TEXT", maxLength: 40, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -30,11 +30,11 @@ namespace Quizyy.Migrations
                 {
                     id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    question = table.Column<string>(type: "TEXT", nullable: false),
-                    answer = table.Column<string>(type: "TEXT", nullable: false),
-                    incorrectans1 = table.Column<string>(type: "TEXT", nullable: false),
-                    incorrectans2 = table.Column<string>(type: "TEXT", nullable: false),
-                    incorrectans3 = table.Column<string>(type: "TEXT", nullable: false)
+                    question = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    answer = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    incorrectans1 = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    incorrectans2 = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    incorrectans3 = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
