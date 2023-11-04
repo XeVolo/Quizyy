@@ -28,9 +28,10 @@ namespace Quizyy.Controller
 		private void FlashCardsControllerService()
 		{
 			List<FlashCardsModel> lista = BaseController.GetFlashCardsList();
-			int d = 1;
+			int lastid = lista.Count()-1;
+			int d = 2;
 			int id = 0;
-			OptionView.NewOption(lista[id].concept, 70, 26);
+			OptionView.NewOption(lista[id].concept, 67, 22);
 			while (true)
 			{
 				ConsoleKeyInfo keyInfo = Console.ReadKey();
@@ -38,24 +39,28 @@ namespace Quizyy.Controller
 				{
 					case ConsoleKey.LeftArrow:
 						--id;
-						ClearFieldView.ClearField(60, 26);
-						OptionView.NewOption(lista[id].concept, 70, 26);
+						d = 2;
+						if (id ==-1) id = lastid;
+						ClearFieldView.ClearField(60, 22);
+						OptionView.NewOption(lista[id].concept, 67, 22);
 						break;
 					case ConsoleKey.RightArrow:
 						++id;
-						ClearFieldView.ClearField(60, 26);
-						OptionView.NewOption(lista[id].concept, 70, 26);
+						d = 2;
+						if (id == lastid+1) id = 0;
+						ClearFieldView.ClearField(60, 22);
+						OptionView.NewOption(lista[id].concept, 67, 22);
 						break;
 					case ConsoleKey.Enter:
 						if (d == 1)
 						{
-							ClearFieldView.ClearField(60, 26);
-							OptionView.NewOption(lista[id].definition, 70, 26);
+							ClearFieldView.ClearField(60, 22);
+							OptionView.NewOption(lista[id].concept, 67, 22);
 							d = 2;
 						}else
 						{
-							ClearFieldView.ClearField(60, 26);
-							OptionView.NewOption(lista[id].concept, 70, 26);
+							ClearFieldView.ClearField(60, 22);
+							OptionView.NewOption(lista[id].definition, 67, 22);
 							d = 1;
 						}
 
