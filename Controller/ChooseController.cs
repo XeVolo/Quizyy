@@ -114,17 +114,17 @@ namespace Quizyy.Controller
 
 			if (drawn[0] == 0)
 			{
-				return new FitOptionModel(0, new FlashCardsModel { id = 0, concept=list[questionid].answer, definition="" }, 40, 26);
+				return new FitOptionModel(0, new FlashCardsModel { id = 0, concept=list[questionid].answer, definition="" }, 40, 26,2);
 			}else if (drawn[1] == 0)
 			{
-				return new FitOptionModel(0, new FlashCardsModel { id = 0, concept = list[questionid].answer, definition = "" }, 40, 29);
+				return new FitOptionModel(0, new FlashCardsModel { id = 0, concept = list[questionid].answer, definition = "" }, 40, 29, 2);
 			}else if (drawn[2] == 0)
 			{
-				return new FitOptionModel(0, new FlashCardsModel { id = 0, concept = list[questionid].answer, definition = "" }, 95, 26);
+				return new FitOptionModel(0, new FlashCardsModel { id = 0, concept = list[questionid].answer, definition = "" }, 95, 26, 2);
 			}
 			else
 			{
-				return new FitOptionModel(0, new FlashCardsModel { id = 0, concept = list[questionid].answer, definition = "" }, 95, 29);
+				return new FitOptionModel(0, new FlashCardsModel { id = 0, concept = list[questionid].answer, definition = "" }, 95, 29, 2);
 			}
 
 

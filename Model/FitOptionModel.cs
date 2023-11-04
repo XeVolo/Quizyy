@@ -12,13 +12,15 @@ namespace Quizyy.Model
 		public FlashCardsModel option { get; set; }
 		public int positionx { get; set; }
 		public int positiony { get; set; }
+		public int length { get; set; }
 
-		public FitOptionModel(int id, FlashCardsModel card, int positionx, int positiony)
+		public FitOptionModel(int id, FlashCardsModel card, int positionx, int positiony,int length)
 		{
 			this.id = id;
 			this.option = card;
 			this.positionx = positionx;
 			this.positiony = positiony;
+			this.length = length+1;
 		}
 	}
 }
