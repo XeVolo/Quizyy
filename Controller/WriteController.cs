@@ -1,7 +1,10 @@
-﻿using Quizyy.Model;
+﻿
+using Quizyy.Model;
 using Quizyy.View;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices.Marshalling;
 using System.Text;
@@ -27,7 +30,10 @@ namespace Quizyy.Controller
 		private void WriteControllerService()
 		{
 			List<WriteModel> list = BaseController.GetWriteList();
-			int id = 0;
+			int lastid = list.Count() - 1;
+			Random rnd = new Random();
+			int id = rnd.Next(lastid);
+			
 			WriteView.WriteOption(list[id].question);
 			while (true)
 			{
@@ -36,19 +42,23 @@ namespace Quizyy.Controller
 				{
 					case ConsoleKey.LeftArrow:
 						--id;
-						ClearFieldView.ClearField(50, 26);
+						if (id == -1) id = lastid;
+						WriteView.ClearField(26);
 						ClearFieldView.ClearField(70, 30);
 						ClearFieldView.ClearField(70, 34);
 						WriteView.WriteOption(list[id].question);
 						break;
 					case ConsoleKey.RightArrow:
 						++id;
-						ClearFieldView.ClearField(50, 26);
+						if (id == lastid + 1) id = 0;
+						WriteView.ClearField(26);
 						ClearFieldView.ClearField(70, 30);
 						ClearFieldView.ClearField(70, 34);
 						WriteView.WriteOption(list[id].question);
 						break;
 					case ConsoleKey.Enter:
+						ClearFieldView.ClearField(70, 30);
+						ClearFieldView.ClearField(70, 34);
 						Console.SetCursorPosition(70, 30);
 						string ans=Console.ReadLine();
 						bool correctness = ans.Equals(list[id].answer);
@@ -56,6 +66,11 @@ namespace Quizyy.Controller
 						{
 							Console.SetCursorPosition(70, 34);
 							Console.WriteLine("Odpowiedź prawidłowa");
+							ClearFieldView.ClearField(70, 30);
+							WriteView.ClearField(26);
+							++id;
+							if (id == lastid + 1) id = 0;
+							WriteView.WriteOption(list[id].question);
 						}
 						else
 						{
