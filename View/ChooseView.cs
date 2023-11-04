@@ -10,17 +10,29 @@ namespace Quizyy.View
 	{
 		public static void ChooseViewSet()
 		{
-			//ArrowsView.ArrowsSet();
+			Console.SetCursorPosition(59, 11);
+			Console.Write("Witaj w trybie Wyboru odpowiedzi");
+			Console.SetCursorPosition(8, 36);
+			Console.Write("Strzałki - poruszanie się po oknie");
+			Console.SetCursorPosition(8, 37);
+			Console.Write("Enter - wybór odpowiedzi");
+			Console.SetCursorPosition(8, 38);
+			Console.Write("Escape - powrót");
 
 
 		}
 		public static void ChooseOption(string question)
 		{
-			Console.SetCursorPosition(50, 20);
-			Console.WriteLine(question);
+			int position = 75 - (question.Length / 2);
+			Console.SetCursorPosition(position, 20);
+			Console.Write(question);
 
 		}
-
+		public static void ClearField(int position)
+		{
+			Console.SetCursorPosition(28, position);
+			Console.Write("                                                                                  ");
+		}
 
 	}
 }

@@ -25,13 +25,13 @@ namespace Quizyy.View
 		{
 			int position = 75 - (question.Length / 2);
 			Console.SetCursorPosition(position, 26);
-			Console.WriteLine(question);
+			Console.Write(question);
 
 		}
 		public static void ClearField(int position)
 		{
 			Console.SetCursorPosition(28, position);
-			Console.WriteLine("                                                                                  ");
+			Console.Write("                                                                                  ");
 		}
 
 

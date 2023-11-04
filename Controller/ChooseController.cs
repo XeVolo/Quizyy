@@ -22,8 +22,7 @@ namespace Quizyy.Controller
 		}
 		private void ChooseControllerService()
 		{
-			List<WriteModel> list = BaseController.GetWriteList();
-			int x = 20, y = 15;
+			int x = 75, y = 25;
 			FitOptionModel ansplace= NewSet();			
 			while (true)
 			{
@@ -104,9 +103,14 @@ namespace Quizyy.Controller
 			anslist.Add(list[questionid].incorrectans1);
 			anslist.Add(list[questionid].incorrectans2);
 			anslist.Add(list[questionid].incorrectans3);
+			ChooseView.ClearField(20);
+			ClearFieldView.ClearField(40,26);
+			ClearFieldView.ClearField(40, 29);
+			ClearFieldView.ClearField(95, 26);
+			ClearFieldView.ClearField(95, 29);
 			ChooseView.ChooseOption(list[questionid].question);
 			List<int> drawn = GetNumbers();
-			
+				
 				OptionView.NewOption(anslist[drawn[0]], 40, 26);
 				OptionView.NewOption(anslist[drawn[1]], 40, 29);
 				OptionView.NewOption(anslist[drawn[2]], 95, 26);
