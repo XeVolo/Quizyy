@@ -24,13 +24,14 @@ namespace Quizyy.Controller
 
 			FirstView.FirstViewSet();
 
-			OptionView.NewOption(option1, 20, 15);
+			OptionView.ChoosenOption(option1, 20, 15);
 
 			OptionView.NewOption(option2, 42, 15);
 
 			OptionView.NewOption(option3, 75, 15);
 
 			OptionView.NewOption(option4, 115, 15);
+			
 		}
 		private void Control()
 		{
@@ -43,7 +44,8 @@ namespace Quizyy.Controller
 			FitController newobject2 = new FitController();
 			WriteController newobject3= new WriteController();
 			ChooseController newobject4= new ChooseController();
-			int x = 20, y = 15;
+
+			int x = 20, y = 16;
 			while (true)
 			{
 				Console.SetCursorPosition(x, y);
@@ -53,20 +55,56 @@ namespace Quizyy.Controller
 				switch (keyInfo.Key)
 				{
 					case ConsoleKey.LeftArrow:
-						if (x > 0)
-							x--;
+						if (x == 20)
+						{
+							OptionView.NewOption(option1, 20, 15);
+							OptionView.ChoosenOption(option4, 115, 15);
+							x = 115;
+						}else if (x == 115)
+						{
+							OptionView.NewOption(option4, 115, 15);
+							OptionView.ChoosenOption(option3, 75, 15);
+							x = 75;
+						}else if (x == 75)
+						{
+							OptionView.NewOption(option3, 75, 15);
+							OptionView.ChoosenOption(option2, 42, 15);
+							x = 42;
+						}else if (x == 42)
+						{
+							OptionView.NewOption(option2, 42, 15);
+							OptionView.ChoosenOption(option1, 20, 15);
+							x = 20;
+						}
+					
+
+
 						break;
 					case ConsoleKey.RightArrow:
-						if (x < Console.WindowWidth - 1)
-							x++;
-						break;
-					case ConsoleKey.UpArrow:
-						if (y > 0)
-							y--;
-						break;
-					case ConsoleKey.DownArrow:
-						if (y < Console.WindowHeight - 1)
-							y++;
+						if (x == 20)
+						{
+							OptionView.ChoosenOption(option2, 42, 15);
+							OptionView.NewOption(option1, 20, 15);
+							x = 42;
+						}
+						else if (x == 42)
+						{
+							OptionView.ChoosenOption(option3, 75, 15);
+							OptionView.NewOption(option2, 42, 15);
+							x = 75;
+						}
+						else if (x == 75)
+						{
+							OptionView.ChoosenOption(option4, 115, 15);
+							OptionView.NewOption(option3, 75, 15);
+							x = 115;
+						}else if(x == 115)
+						{
+							OptionView.ChoosenOption(option1, 20, 15);
+							OptionView.NewOption(option4, 115, 15);
+							x = 20;
+						}
+
 						break;
 					case ConsoleKey.Enter:
 						if (x >= 20 && x <= (21 + option1.Length) && y >= 15 && y <= 17)
@@ -75,6 +113,7 @@ namespace Quizyy.Controller
 							newobject1.CreateFlashCardsController();
 							Console.Write("?");
 							CreateMainController();
+							OptionView.ChoosenOption(option1, 20, 15);
 
 						}
 						else if (x >= 42 && x <= (43 + option2.Length) && y >= 15 && y <= 17)
@@ -82,6 +121,8 @@ namespace Quizyy.Controller
 							newobject2.CreateFitController();
 							Console.Write("?");
 							CreateMainController();
+							OptionView.NewOption(option1, 20, 15);
+							OptionView.ChoosenOption(option2, 42, 15);
 
 						}
 						else if (x >= 75 && x <= (76 + option3.Length) && y >= 15 && y <= 17)
@@ -89,6 +130,8 @@ namespace Quizyy.Controller
 							newobject3.CreateWriteController();
 							Console.Write("?");
 							CreateMainController();
+							OptionView.NewOption(option1, 20, 15);
+							OptionView.ChoosenOption(option3, 75, 15);
 
 						}
 						else if (x >= 115 && x <= (116 + option4.Length) && y >= 15 && y <= 17)
@@ -96,6 +139,8 @@ namespace Quizyy.Controller
 							newobject4.CreateChooseController();
 							Console.Write("?");
 							CreateMainController();
+							OptionView.NewOption(option1, 20, 15);
+							OptionView.ChoosenOption(option4, 115, 15);
 
 						}
 						break;
