@@ -30,7 +30,7 @@ namespace Quizyy.Controller
 			FitOptionModel? delete2 = null;
 			List<FitOptionModel> optionlist = NewSet();
 			FitOptionModel current = optionlist[0];
-			int con = 0;
+			int con = 0,con2=0;
 			while (true)
 			{
 				Console.SetCursorPosition(x, y);
@@ -38,6 +38,7 @@ namespace Quizyy.Controller
 				switch (keyInfo.Key)
 				{
 					case ConsoleKey.LeftArrow:
+						con2 = 0;
 						if (current.positionx == 95)
 						{
 							foreach (var item in optionlist)
@@ -52,14 +53,29 @@ namespace Quizyy.Controller
 									x = 40;
 									OptionView.ChoosenOption(item.option.concept, item.positionx, item.positiony);
 									con = 0;
+									con2 = 1;
 									break;
 								}
 							}
+							if (con2 == 0)
+							{
+								if (con != 1)
+								{
+									OptionView.NewOption(current.option.definition, current.positionx, current.positiony);
+								}
+								current = optionlist.First();
+								x = 40;
+								y= current.positiony;
+								OptionView.ChoosenOption(current.option.concept, current.positionx, current.positiony);
+								con = 0;
+							}
+
 						}
 						break;
 					case ConsoleKey.RightArrow:
 						if (current.positionx == 40)
 						{
+							con2 = 0;
 							foreach(var item in optionlist)
 							{
 								
@@ -73,8 +89,21 @@ namespace Quizyy.Controller
 									x = 95;
 									OptionView.ChoosenOption(item.option.definition, item.positionx, item.positiony);
 									con = 0;
+									con2 = 1;
 									break;
 								}
+							}
+							if (con2 == 0)
+							{
+								if (con != 1)
+								{
+									OptionView.NewOption(current.option.concept, current.positionx, current.positiony);
+								}
+								current = optionlist.Last();
+								x = 95;
+								y=current.positiony;
+								OptionView.ChoosenOption(current.option.definition, current.positionx, current.positiony);
+								con = 0;
 							}
 						}
 						break;
