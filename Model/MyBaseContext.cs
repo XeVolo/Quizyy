@@ -16,7 +16,7 @@ namespace Quizyy.Model
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlite("Data Source=E:\\Studia\\kck\\Quizyy\\database.db;");
+			optionsBuilder.UseSqlite("Data Source=database.db;");
 		}
 	}
 	

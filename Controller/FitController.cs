@@ -271,7 +271,11 @@ namespace Quizyy.Controller
 						optionlist.Remove(delete2);
 						delete1 = null;
 						delete2 = null;
-						if (count == 7) CreateFitController();
+						if (count == 7)
+						{
+							x = 40; y = 14;
+							optionlist = NewSet();
+						}
 						break;
 					case ConsoleKey.Escape:
 
