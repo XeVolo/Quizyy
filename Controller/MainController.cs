@@ -44,6 +44,7 @@ namespace Quizyy.Controller
 			FitController newobject2 = new FitController();
 			WriteController newobject3= new WriteController();
 			ChooseController newobject4= new ChooseController();
+			EasterEggController secretobject= new EasterEggController();
 
 			int x = 20, y = 16;
 			while (true)
@@ -142,6 +143,14 @@ namespace Quizyy.Controller
 							OptionView.NewOption(option1, 20, 15);
 							OptionView.ChoosenOption(option4, 115, 15);
 
+						}
+						break;
+					case ConsoleKey.Q:
+						if (x >= 20 && x <= (21 + option1.Length) && y >= 15 && y <= 17)
+						{
+							secretobject.CreateEasterEggController();
+							Console.Write("?");
+							CreateMainController();
 						}
 						break;
 				}
