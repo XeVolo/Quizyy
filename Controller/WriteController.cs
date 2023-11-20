@@ -60,8 +60,8 @@ namespace Quizyy.Controller
 						ClearFieldView.ClearField(70, 30);
 						ClearFieldView.ClearField(70, 34);
 						Console.SetCursorPosition(70, 30);
-						string ans=Console.ReadLine();
-						bool correctness = ans.Equals(list[id].answer);
+						string ans=Console.ReadLine().ToLower();
+						bool correctness = ans.Equals(list[id].answer.ToLower());
 						if (correctness)
 						{
 							Console.SetCursorPosition(70, 34);
