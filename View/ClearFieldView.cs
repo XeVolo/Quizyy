@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,5 +20,16 @@ namespace Quizyy.View
 				
 			}
 		}
+		public static void BetterClearField(int position1,int position2,string option)
+		{
+			int size=option.Length+2;
+			for (int i = position2; i <= position2+2; i++)
+			{
+				Console.SetCursorPosition(position1, i);
+				Console.Write("".PadLeft(size, ' '));
+
+			}
+		}
+
 	}
 }

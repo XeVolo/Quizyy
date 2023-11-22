@@ -15,7 +15,7 @@ public class Program
 		using (var context = new MyBaseContext())
 		{
 			/*
-			string path = "E:\\Studia\\kck\\danefiszki1.txt";
+			string path = "E:\\Studia\\kck\\danefiszki2.txt";
 			string[] lines = File.ReadAllLines(path);
 			foreach (var line in lines)
 			{
@@ -39,7 +39,7 @@ public class Program
 			context.SaveChanges();
 			*/
 			/*
-			string path = "E:\\Studia\\kck\\danepytanie1.txt";
+			string path = "E:\\Studia\\kck\\danepytanie2.txt";
 			string[] lines = File.ReadAllLines(path);
 			foreach (var line in lines)
 			{
@@ -69,7 +69,6 @@ public class Program
 			}
 			context.SaveChanges();
 			*/
-
 			context.Dispose();
 		}
 

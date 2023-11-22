@@ -32,36 +32,40 @@ namespace Quizyy.Controller
 			int lastid = lista.Count()-1;
 			int d = 2;
 			int id = 0;
-			OptionView.NewOption(lista[id].concept, 67, 22);
+			OptionView.NewOption(lista[id].concept, 60, 22);
 			while (true)
 			{
 				ConsoleKeyInfo keyInfo = Console.ReadKey();
 				switch (keyInfo.Key)
 				{
 					case ConsoleKey.LeftArrow:
+						
+						ClearFieldView.BetterClearField(60, 22, lista[id].concept);
 						--id;
 						d = 2;
 						if (id ==-1) id = lastid;
-						ClearFieldView.ClearField(60, 22);
-						OptionView.NewOption(lista[id].concept, 67, 22);
+						
+						OptionView.NewOption(lista[id].concept, 60, 22);
 						break;
 					case ConsoleKey.RightArrow:
+						ClearFieldView.BetterClearField(60, 22, lista[id].concept);
 						++id;
 						d = 2;
 						if (id == lastid+1) id = 0;
-						ClearFieldView.ClearField(60, 22);
-						OptionView.NewOption(lista[id].concept, 67, 22);
+						
+						OptionView.NewOption(lista[id].concept, 60, 22);
 						break;
 					case ConsoleKey.Enter:
+						
 						if (d == 1)
 						{
-							ClearFieldView.ClearField(60, 22);
-							OptionView.NewOption(lista[id].concept, 67, 22);
+							ClearFieldView.BetterClearField(60, 22, lista[id].definition);
+							OptionView.NewOption(lista[id].concept, 60, 22);
 							d = 2;
 						}else
 						{
-							ClearFieldView.ClearField(60, 22);
-							OptionView.NewOption(lista[id].definition, 67, 22);
+							ClearFieldView.BetterClearField(60, 22, lista[id].concept);
+							OptionView.NewOption(lista[id].definition, 60, 22);
 							d = 1;
 						}
 

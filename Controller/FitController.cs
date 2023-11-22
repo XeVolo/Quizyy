@@ -209,11 +209,11 @@ namespace Quizyy.Controller
 								{
 									flashcard1 = f;
 									Console.SetCursorPosition(40, 40);
-									Console.Write("                             ");
+									Console.Write("                                            ");
 									Console.SetCursorPosition(95, 40);
-									Console.Write("                              ");
-									Console.SetCursorPosition(70, 42);
-									Console.Write("                          ");
+									Console.Write("                                             ");
+									Console.SetCursorPosition(70, 42); 
+									Console.Write("                                             ");
 									Console.SetCursorPosition(40, 40);
 									if (f.positionx == 40)
 									{
@@ -242,8 +242,16 @@ namespace Quizyy.Controller
 										{
 											Console.SetCursorPosition(70, 42);
 											Console.Write("Połącznie poprawne");
-											ClearFieldView.ClearField(flashcard1.positionx, flashcard1.positiony);
-											ClearFieldView.ClearField(flashcard2.positionx, flashcard2.positiony);
+											if (flashcard1.positionx == 40)
+											{
+												ClearFieldView.BetterClearField(flashcard1.positionx, flashcard1.positiony,flashcard1.option.concept);
+												ClearFieldView.BetterClearField(flashcard2.positionx, flashcard2.positiony,flashcard2.option.definition);
+											}
+											else
+											{
+												ClearFieldView.BetterClearField(flashcard1.positionx, flashcard1.positiony, flashcard1.option.definition);
+												ClearFieldView.BetterClearField(flashcard2.positionx, flashcard2.positiony, flashcard2.option.concept);
+											}
 											count++;
 											delete1 = flashcard1;
 											delete2= flashcard2;
@@ -275,6 +283,7 @@ namespace Quizyy.Controller
 						{
 							x = 40; y = 14;
 							optionlist = NewSet();
+							count = 0;
 						}
 						break;
 					case ConsoleKey.Escape:
