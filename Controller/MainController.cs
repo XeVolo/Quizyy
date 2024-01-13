@@ -44,8 +44,7 @@ namespace Quizyy.Controller
 			FitController newobject2 = new FitController();
 			WriteController newobject3= new WriteController();
 			ChooseController newobject4= new ChooseController();
-			EasterEggController secretobject= new EasterEggController();
-
+			EasterEggController secretobject= new EasterEggController();			
 			int x = 20, y = 16;
 			while (true)
 			{
@@ -153,6 +152,8 @@ namespace Quizyy.Controller
 							CreateMainController();
 						}
 						break;
+					case ConsoleKey.Escape:
+						return;						
 				}
 			}
 		}

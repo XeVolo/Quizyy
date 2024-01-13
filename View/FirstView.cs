@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace Quizyy.View
 		public static void FirstViewSet() {
 			Console.SetBufferSize(150, 45);
 			Console.SetWindowSize(150, 45);
+			Console.WriteLine("?");
 			LogoView.LogoViewSet();
 			Console.SetCursorPosition(67, 10);
 			Console.Write("Witaj w Quizyy");
